@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# SCRIPT 06: MACHINE LEARNING INSIGHTS (BILINGUAL EDITION)
+# SCRIPT 06: MACHINE LEARNING INSIGHTS (BILINGUAL EDITION - HIGH RES)
 # Author: Diego Antunes
 # Project: GOAT Tabletop Sports
 # Goals: 
@@ -76,9 +76,12 @@ p_regressao <- ggplot(resultados, aes(x = estimate, y = reorder(term_clean, esti
     plot.subtitle = element_text(color = "gray40", size = 10)
   )
 
-print(p_regressao)
-ggsave("plots/06_ml_regression_drivers.png", plot = p_regressao, width = 10, height = 7, bg = "white")
-message("Plot 1 Saved: plots/06_ml_regression_drivers.png")
+# Salvar (High Res)
+ggsave("plots/06_ml_regression_drivers.png", 
+       plot = p_regressao, 
+       device = ragg::agg_png, width = 10, height = 7, dpi = 300, bg = "white")
+
+message("Plot 1 Saved (High Res): plots/06_ml_regression_drivers.png")
 
 
 # =============================================================================
@@ -121,7 +124,7 @@ cluster_elite_id <- plot_data %>%
 # Logic: Machine says Elite (Cluster), Human says Q2 (Silver)
 hidden_gems <- plot_data %>%
   filter(cluster_k == cluster_elite_id) %>%
-  filter(grepl("Q2", certification_seal))
+  filter(grepl("Q2", certification_seal) | grepl("Silver", certification_seal)) # Check both naming conventions
 
 # --- PLOT 2: CLUSTER MAP (BILINGUAL) ---
 p_cluster <- ggplot(plot_data, aes(x = PC1, y = PC2)) +
@@ -137,12 +140,13 @@ p_cluster <- ggplot(plot_data, aes(x = PC1, y = PC2)) +
                    box.padding = 0.5, size = 3.5, fontface = "bold", 
                    color = "#d35400", fill = "white", segment.color = "grey50") +
   
-  # Colors match the Official Seal
+  # Colors match the Official Seal (Updated to match Script 01 names)
   scale_color_manual(values = c(
-    "Q1 - Elite (Top 25)" = "#D4AF37", # Gold
-    "Q2 - Gold (26-50)" = "#7f8c8d",   # Silver/Gray
-    "Q3 - Silver (51-75)" = "#cd7f32", # Bronze
-    "Q4 - Honorable Mention (76-100)" = "#27ae60" # Green
+    "Q1 - Gold (Top 25)"            = "#D4AF37",
+    "Q2 - Silver (26-50)"           = "#A0A0A0",
+    "Q3 - Bronze (51-75)"           = "#CD7F32",
+    "Q4 - Honorable Mention (76-100)"      = "#4DAF4A",
+    "Not Ranked (Outside Top 100)" = "#95a5a6"
   )) +
   
   # Labels
@@ -163,8 +167,11 @@ p_cluster <- ggplot(plot_data, aes(x = PC1, y = PC2)) +
     plot.subtitle = element_text(color = "gray40", size = 11)
   )
 
-print(p_cluster)
-ggsave("plots/06_ml_clusters_validation.png", plot = p_cluster, width = 12, height = 9, bg = "white")
-message("Plot 2 Saved: plots/06_ml_clusters_validation.png")
+# Salvar (High Res)
+ggsave("plots/06_ml_clusters_validation.png", 
+       plot = p_cluster, 
+       device = ragg::agg_png, width = 12, height = 9, dpi = 300, bg = "white")
+
+message("Plot 2 Saved (High Res): plots/06_ml_clusters_validation.png")
 
 message("--- MACHINE LEARNING PIPELINE COMPLETE ---")

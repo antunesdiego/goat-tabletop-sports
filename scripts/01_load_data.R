@@ -23,3 +23,4 @@ head(sports_db)
 # Let's count how many games you have per category
 sports_db %>% 
   count(sport_category, sort = TRUE)
+

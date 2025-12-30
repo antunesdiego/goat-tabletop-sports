@@ -1,3 +1,9 @@
+---
+output:
+  html_document: default
+  word_document: default
+  pdf_document: default
+---
 # 🎲 GOAT Sports Tabletop Games: Projeto de Análise de Dados
 
 > [🇺🇸 Read this documentation in English](README.md)
