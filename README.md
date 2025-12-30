@@ -8,19 +8,24 @@
 
 ## 📋 Overview
 
-**GOAT Sports Tabletop Games** is a data science project developed to analyze, rank, and classify sports-themed board games. Unlike standard rankings (like BoardGameGeek), this project applies a specific methodology based on **Sports Taxonomy** (Invasion, Target, Racing, etc.) and Game Design principles (MDA Framework).
+**GOAT Sports Tabletop Games** is a data science project developed to analyze, rank, and classify a **personal collection** of sports-themed board games.
 
-The goal is to answer: *Which board games best simulate the feeling of real sports while maintaining high replayability?*
+Instead of using external aggregated metrics, this project applies a specific methodology based on **Sports Taxonomy** (Invasion, Target, Racing, etc.) and **Self-Reported Metrics** to visualize the intersection between game mechanics and personal enjoyment.
+
+The goal is to answer: *Which board games best simulate the feeling of real sports while maintaining high willingness to play?*
 
 ---
 
 ## ⚙️ Methodology & Metrics
 
-The analysis is built upon a custom dataset of ~100 games, evaluated on three core pillars:
+The analysis is built upon a curated dataset of ~100 games, evaluated on three core pillars:
 
 1.  **MDA Quality (Mechanics, Dynamics, Aesthetics):** Technical design evaluation.
 2.  **Sports Immersion Rate:** How well does the game simulate the real sport's logic?
-3.  **Replayability:** Willingness to play again (correlated with BGG data).
+3.  **Willingness to Play:** A subjective metric quantified strictly following the **BoardGameGeek (BGG) Rating Standards**:
+    * **10 (Outstanding):** Always willing to play.
+    * **7 (Good):** Usually willing to play.
+    * **5 (Average):** Average game, slightly boring, take it or leave it.
 
 ### The "Sport on the Table" Index
 A composite score is calculated to determine the **GOAT (Greatest of All Time)** status, categorizing games into quartiles:

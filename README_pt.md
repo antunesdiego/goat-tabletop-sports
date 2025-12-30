@@ -16,19 +16,24 @@ output:
 
 ## 📋 Visão Geral
 
-**GOAT Sports Tabletop Games** é um projeto de ciência de dados desenvolvido para analisar, ranquear e classificar jogos de tabuleiro com temática esportiva. Diferente de rankings tradicionais (como o do BoardGameGeek), este projeto aplica uma metodologia específica baseada na **Taxonomia dos Esportes** (BNCC - Invasão, Marca, Alvo, etc.) e princípios de Game Design (Framework MDA).
+**GOAT Sports Tabletop Games** é um projeto de ciência de dados desenvolvido para analisar, ranquear e classificar uma **coleção pessoal** de jogos de tabuleiro com temática esportiva.
 
-O objetivo é responder: *Qual jogo de tabuleiro melhor simula a lógica do esporte real enquanto mantém uma alta rejogabilidade?*
+Em vez de utilizar métricas externas agregadas (como notas de mercado), este projeto aplica uma metodologia específica baseada na **Taxonomia dos Esportes** (Invasão, Alvo, Corrida, etc.) e em **Métricas Auto-Relatadas** para visualizar a interseção entre mecânicas de jogo e gosto pessoal.
+
+O objetivo é responder: *Quais jogos de tabuleiro melhor simulam a sensação do esporte real enquanto mantêm uma alta vontade de jogar?*
 
 ---
 
 ## ⚙️ Metodologia e Métricas
 
-A análise foi construída sobre uma base de dados própria com ~100 jogos, avaliados em três pilares centrais:
+A análise é construída sobre um dataset curado de ~100 jogos, avaliados em três pilares centrais:
 
-1.  **Qualidade MDA (Mecânica, Dinâmica, Estética):** Avaliação técnica do design e regras.
-2.  **Imersão Esportiva (Sports Immersion):** O quão bem o jogo simula a lógica e a física do esporte real?
-3.  **Rejogabilidade (Replayability):** A vontade de jogar novamente (correlacionada com dados do BGG).
+1.  **Qualidade MDA (Mecânica, Dinâmica, Estética):** Avaliação técnica do design.
+2.  **Imersão Esportiva:** O quanto o jogo simula bem a lógica e física do esporte real?
+3.  **Vontade de Jogar (Willingness to Play):** Uma métrica subjetiva quantificada seguindo estritamente os **Padrões de Nota do BoardGameGeek (BGG)**:
+    * **10 (Excepcional):** Sempre disposto a jogar.
+    * **7 (Bom):** Geralmente disposto a jogar.
+    * **5 (Médio):** Tanto faz, joga se insistirem.
 
 ### O Índice "Esporte na Mesa"
 Uma nota composta é calculada para determinar o status **GOAT (Greatest of All Time)**, categorizando os jogos em quartis:
