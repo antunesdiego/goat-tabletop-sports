@@ -1,0 +1,11 @@
+# Arquivos de Sistema do R (Padrão)
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# --- DADOS SENSÍVEIS ---
+# Ignorar todos os arquivos Excel
+*.xlsx
+*.xls
+

@@ -1,0 +1,98 @@
+# DATA DICTIONARY - SPORTS BOARD GAMES ANALYSIS
+# Author: Diego Antunes 
+# Project: Data Analysis and Ranking of Top 50 Sports Board Games - Esporte na Mesa
+# Last Update: 2025
+
+--- GENERAL DESCRIPTION ---
+This dataset contains data on sports-themed board games played and rated by the author. 
+The goal is to analyze the relationship between thematic immersion and design quality (MDA), 
+as well as to explore patterns across different sport categories.
+
+--- VARIABLE LIST ---
+
+1. game_id
+   - Type: Integer
+   - Description: Unique identifier for each game in the database.
+   - Example: 1, 2, 3...
+
+2. game_name
+   - Type: String
+   - Description: Official name of the board game.
+
+3. publication_year
+   - Type: Integer
+   - Description: The year the game was originally published.
+
+4. sport_category
+   - Type: String (Factor)
+   - Description: Classification of the sport based on its internal logic (Sports Pedagogy/TGfU).
+   - Valid Categories:
+     * "Racing & Measured": Sports where the outcome is defined by time, distance, or weight (e.g., Athletics, Cycling, Swimming).
+     * "Invasion": Team sports involving territory invasion to score (e.g., Soccer, Basketball, American Football).
+     * "Net/Wall": Sports with a dividing net or rebound wall (e.g., Tennis, Volleyball, Squash).
+     * "Target": Sports where the goal is to throw/hit an object towards a target (e.g., Golf, Bowling, Curling).
+     * "Striking & Fielding": Sports involving batting and running between bases (e.g., Baseball, Cricket).
+     * "Aesthetic & Judged": Sports evaluated by judges based on movement quality (e.g., Skateboarding, Surfing, Gymnastics).
+     * "Combat": Fighting sports (e.g., Boxing, Fencing, MMA).
+
+5. sports
+   - Type: String
+   - Description: The specific sport(s) depicted in the game. Multiple values separated by commas.
+   - Example: "Formula 1", "Cycling, Racing"
+
+6. mda_rate
+   - Type: Numeric (Float)
+   - Scale: 0.0 to 10.0
+   - Description: Rating assigned to the technical quality of the game based on the MDA framework (Mechanics, Dynamics, Aesthetics).
+     * 0-4: Broken or poor design.
+     * 5-7: Functional game, but with flaws.
+     * 8-10: Excellent design and flow.
+
+7. sports_immersion_rate
+   - Type: Numeric (Float)
+   - Scale: 0.0 to 10.0
+   - Description: Subjective rating of how well the game simulates the tension and nuances of the real sport.
+     * 0: Abstract (does not feel like the sport).
+     * 10: Perfect simulation (highly thematic feeling).
+
+8. replayability
+   - Type: Integer
+   - Scale: 1 to 10 (Based on BGG "Willingness to play" scale)
+   - Description: How likely the author is to play the game again.
+     * 10: Always want to play, will never turn down a game.
+     * 8: Enjoy playing and would suggest it.
+     * 5-6: Will play if asked, but won't suggest it.
+     * 1-4: Won't play again / Bad experience.
+
+9. min_players
+   - Type: Integer
+   - Description: Minimum number of players supported (as per box).
+
+10. max_players
+    - Type: Integer
+    - Description: Maximum number of players supported (as per box).
+
+11. playing_time_mins
+    - Type: Integer
+    - Description: Average estimated playing time in minutes.
+
+12. solo_mode
+    - Type: Logical (Boolean: TRUE / FALSE)
+    - Description: Indicates if the game has official rules for solo play.
+    - Values: TRUE (Has solo mode) / FALSE (No solo mode).
+
+13. bgg_link
+    - Type: String (URL)
+    - Description: Direct link to the BoardGameGeek page.
+
+14. ludopedia_link
+    - Type: String (URL)
+    - Description: Direct link to the Ludopedia page.
+
+15. short_description_en
+    - Type: String
+    - Description: Brief description of the game and justification for its categorization (in English). Useful for international NLP analysis.
+
+16. short_description_pt
+    - Type: String
+    - Description: Brief description of the game and justification for its categorization (in Portuguese).
